@@ -1,11 +1,14 @@
-head {
+body {
+background-image: url("background.photo2.jpg");
+opacity:
 
 }
 #imageHolder img {
   height: 300px;
+  padding: 10px;
 }
 img:hover {
-
+   box-shadow: 10px 10px 5px #888888;
 }
 #button {
   display: none;
@@ -13,4 +16,31 @@ img:hover {
 
 #total {
   display: none;
+}
+#chartContainer {
+  height: 300px; width: 100%;
+  display: none;
+  background-color:
+}
+#box {
+  height:;
+}
+.text {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  margin: 100px;
+  padding: 100px;
+}
+.moreText{
+  text-align: center;
+  text-shadow: 2px 2px #888888;
+  font-family: 'Cinzel', serif;
+  background-color: gainsboro;
+  margin-top: 10px;
+}
+#box {
+  background-color: gainsboro;
+}
+footer {
+
 }
