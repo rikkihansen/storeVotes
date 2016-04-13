@@ -9,20 +9,19 @@ var Product = function (img, name, idx) {
 
 //making imageArray
 var imageArray= new Array ();
-imageArray.push(new Product("bag.jpg", "bag", 0));
-imageArray.push(new Product("banana.jpg", "banana", 1));
-imageArray.push(new Product("boots.jpg", "boots", 2));
-imageArray.push(new Product("chair.jpg", "chair", 3));
-imageArray.push(new Product("cthulhu.jpg", "cthulhu", 4));
-imageArray.push(new Product("dragon.jpg", "dragon", 5));
-imageArray.push(new Product("pen.jpg", "pen", 6));
-imageArray.push(new Product("scissors.jpg", "scissors", 7));
-imageArray.push(new Product("shark.jpg", "shark", 8));
-imageArray.push(new Product("sweep.jpg", "sweep", 9));
-imageArray.push(new Product("unicorn.jpg", "unicorn", 10));
-imageArray.push(new Product("usb.jpg", "usb", 11));
-imageArray.push(new Product("water_can.jpg", "water can", 12));
-imageArray.push(new Product("wine_glass.jpg", "wine glass", 13));
+imageArray.push(new Product("Images/bag.jpg", "bag", 0));
+imageArray.push(new Product("Images/banana.jpg", "banana", 1));
+imageArray.push(new Product("Images/boots.jpg", "boots", 2));
+imageArray.push(new Product("Images/chair.jpg", "chair", 3));
+imageArray.push(new Product("Images/cthulhu.jpg", "cthulhu", 4));
+imageArray.push(new Product("Images/dragon.jpg", "dragon", 5));
+imageArray.push(new Product("Images/pen.jpg", "pen", 6));
+imageArray.push(new Product("Images/scissors.jpg", "scissors", 7));
+imageArray.push(new Product("Images/shark.jpg", "shark", 8));
+imageArray.push(new Product("Images/sweep.jpg", "sweep", 9));
+imageArray.push(new Product("Images/unicorn.jpg", "unicorn", 10));
+imageArray.push(new Product("Images/usb.jpg", "usb", 11));
+imageArray.push(new Product("Images/wine_glass.jpg", "wine glass", 13));
 
 var availablePhotos = new Array();
 function makeArrayCopy() {
@@ -81,15 +80,19 @@ var button= document.getElementById("button");
 var showButton= document.getElementById("button");
 var container = document.getElementById("chartContainer");
 var imageHolder = document.getElementById("imageHolder");
+var paragraph = document.getElementById("p");
 
 if (showButton.onclick) {
   container.style.display="block";
   showButton.style.display="none"
   imageHolder.style.display="none"
+  paragraph.style.display="block";
 
 }
 else {
   container.style.display="none";
+  paragraph.style.display="none";
+
   }
 });
 
