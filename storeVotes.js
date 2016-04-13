@@ -82,6 +82,7 @@ var showButton= document.getElementById("button");
 var container = document.getElementById("chartContainer");
 if (showButton.onclick) {
   container.style.display="block";
+  showButton.style.display="none";
 }
 else {
   container.style.display="none";
