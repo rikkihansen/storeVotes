@@ -21,8 +21,8 @@ imageArray.push(new Product("shark.jpg", "shark", 8));
 imageArray.push(new Product("sweep.jpg", "sweep", 9));
 imageArray.push(new Product("unicorn.jpg", "unicorn", 10));
 imageArray.push(new Product("usb.jpg", "usb", 11));
-imageArray.push(new Product("water_can.jpg", "water-can", 12));
-imageArray.push(new Product("wine_glass.jpg", "wine-glass", 13));
+imageArray.push(new Product("water_can.jpg", "water can", 12));
+imageArray.push(new Product("wine_glass.jpg", "wine glass", 13));
 
 var availablePhotos = new Array();
 function makeArrayCopy() {
@@ -80,9 +80,13 @@ var button= document.getElementById("button");
  button.addEventListener("click", function() {
 var showButton= document.getElementById("button");
 var container = document.getElementById("chartContainer");
+var imageHolder = document.getElementById("imageHolder");
+
 if (showButton.onclick) {
   container.style.display="block";
-  showButton.style.display="none";
+  showButton.style.display="none"
+  imageHolder.style.display="none"
+
 }
 else {
   container.style.display="none";
