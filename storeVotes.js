@@ -58,11 +58,11 @@ var totalVotes = 0;
      var clickedImage = imageArray[event.target.dataset.idx];
      var showButton= document.getElementById("button");
      var container = document.getElementById("chartContainer");
+     displayImage();
      clickedImage.y++;
      totalVotes++;
      console.log(clickedImage);
      console.log(totalVotes);
-     displayImage();
      chart.render();
 
   if (totalVotes % 15 == 0) {
@@ -74,6 +74,7 @@ var totalVotes = 0;
   }
 });
 
+debugger;
 
 var button= document.getElementById("button");
  button.addEventListener("click", function() {
