@@ -60,6 +60,7 @@ var totalVotes = 0;
      var container = document.getElementById("chartContainer");
      displayImage();
      clickedImage.y++;
+     localStorage.setItem("data", JSON.stringify(imageArray));
      totalVotes++;
      console.log(clickedImage);
      console.log(totalVotes);
@@ -74,7 +75,8 @@ var totalVotes = 0;
   }
 });
 
-debugger;
+
+
 
 var button= document.getElementById("button");
  button.addEventListener("click", function() {
@@ -97,24 +99,46 @@ else {
   }
 });
 
+//
+//  var chart= null;
+// window.onload = function () {
+// 	 chart = new CanvasJS.Chart("chartContainer", {
+// 		title:{
+// 			text: "Click's Per Photo"
+// 		},
+// 		data: [
+// 		{
+// 			type: "column",
+// 			dataPoints: imageArray
+//
+// 		}
+// 		]
+// 	});
+// 	chart.render();
+// }
 
- var chart= null;
-window.onload = function () {
-	 chart = new CanvasJS.Chart("chartContainer", {
-		title:{
-			text: "Click's Per Photo"
-		},
-		data: [
-		{
-			type: "column",
-			dataPoints: imageArray
+var storage = localStorage.getItem("data");
+imageArray = JSON.parse(storage);
 
-		}
-		]
-	});
-	chart.render();
+if (typeof storage === undefined) {
+  makeArrayCopy();
+  displayImage();
+} else {
+  var chart= null;
+ window.onload = function () {
+ 	 chart = new CanvasJS.Chart("chartContainer", {
+ 		title:{
+ 			text: "Click's Per Photo"
+ 		},
+ 		data: [
+ 		{
+ 			type: "column",
+ 			dataPoints: imageArray
+
+ 		}
+ 		]
+ 	});
+ 	chart.render();
+ }
+
 }
-
-
-makeArrayCopy();
-displayImage();
