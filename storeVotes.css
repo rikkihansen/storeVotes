@@ -7,7 +7,7 @@ opacity:
   margin-left: 36%;
   margin-top: 100px;
 }
-img:hover #pic {
+ #pic:hover {
   box-shadow: none;
 }
 #imageHolder img {
@@ -27,7 +27,6 @@ img:hover {
 }
 #chartContainer {
   height: 300px; width: 100%;
-  display: none;
   background-color:
 }
 #box {

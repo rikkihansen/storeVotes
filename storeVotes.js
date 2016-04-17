@@ -21,7 +21,7 @@ imageArray.push(new Product("Images/shark.jpg", "shark", 8));
 imageArray.push(new Product("Images/sweep.jpg", "sweep", 9));
 imageArray.push(new Product("Images/unicorn.jpg", "unicorn", 10));
 imageArray.push(new Product("Images/usb.jpg", "usb", 11));
-imageArray.push(new Product("Images/wine_glass.jpg", "wine glass", 13));
+imageArray.push(new Product("Images/wine_glass.jpg", "wine glass", 12));
 
 var availablePhotos = new Array();
 function makeArrayCopy() {
@@ -79,24 +79,24 @@ var totalVotes = 0;
 
 
 var button= document.getElementById("button");
- button.addEventListener("click", function() {
-var showButton= document.getElementById("button");
-var container = document.getElementById("chartContainer");
-var imageHolder = document.getElementById("imageHolder");
-var paragraph = document.getElementById("p");
+button.addEventListener("click", function() {
+  var showButton= document.getElementById("button");
+  var container = document.getElementById("chartContainer");
+  var imageHolder = document.getElementById("imageHolder");
+  var paragraph = document.getElementById("p");
 
-if (showButton.onclick) {
-  container.style.display="block";
-  showButton.style.display="none"
-  imageHolder.style.display="none"
-  paragraph.style.display="block";
-
-}
-else {
-  container.style.display="none";
-  paragraph.style.display="none";
+  if (showButton.onclick) {
+    container.style.display="block";
+    showButton.style.display="none"
+    imageHolder.style.display="none"
+    paragraph.style.display="block";
 
   }
+  else {
+    container.style.display="none";
+    paragraph.style.display="none";
+
+    }
 });
 
 //
@@ -118,27 +118,28 @@ else {
 // }
 
 var storage = localStorage.getItem("data");
-imageArray = JSON.parse(storage);
 
-if (typeof storage === undefined) {
+if (storage == null) {
   makeArrayCopy();
   displayImage();
 } else {
-  var chart= null;
+  ImageArray= JSON.parse(storage);
  window.onload = function () {
- 	 chart = new CanvasJS.Chart("chartContainer", {
- 		title:{
- 			text: "Click's Per Photo"
- 		},
- 		data: [
- 		{
- 			type: "column",
- 			dataPoints: imageArray
-
- 		}
- 		]
- 	});
  	chart.render();
  }
 
 }
+
+var chart= null;
+chart = new CanvasJS.Chart("chartContainer", {
+ title:{
+   text: "Click's Per Photo"
+ },
+ data: [
+ {
+   type: "column",
+   dataPoints: imageArray
+
+ }
+ ]
+});
