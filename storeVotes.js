@@ -89,6 +89,8 @@ button.addEventListener("click", function() {
 
   if (showButton.onclick) {
     paragraph.style.display="block";
+    imageHolder.style.display="none";
+
   }
   else {
     paragraph.style.display="none";
