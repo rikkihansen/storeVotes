@@ -9,21 +9,23 @@ opacity:
 }
  #pic:hover {
   box-shadow: none;
+  transform: none;
 }
 #imageHolder img {
   height: 300px;
-  padding: 20px;
+  padding-left: 70px;
 }
-img {
+img #imageHolder{
   width: 400px;
   height: 500px;
   margin-left: 10px;
-  transition: all .5s ease;
+  transition: transform 1s;
 
 }
 img:hover {
    box-shadow: 10px 10px 5px #888888;
    transform: scale(1.1);
+   transition: all .5s ease;
 }
 #button {
   color:white;
@@ -31,7 +33,7 @@ img:hover {
   opacity: 0.8;
   margin-left: 50%;
   margin-right: 50%;
-  
+  transition: transform 1s;
 }
 
 #button:hover {
@@ -39,15 +41,9 @@ img:hover {
   background: black;
 }
 
-#total {
-  display: none;
-}
 #chartContainer {
   height: 300px; width: 100%;
   background-color:
-}
-#box {
-  height:;
 }
 #button {
   background-color: grey;
