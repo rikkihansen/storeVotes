@@ -12,14 +12,31 @@ opacity:
 }
 #imageHolder img {
   height: 300px;
-  padding: 10px;
+  padding: 20px;
+}
+img {
+  width: 400px;
+  height: 500px;
+  margin-left: 10px;
+  transition: all .5s ease;
+
 }
 img:hover {
    box-shadow: 10px 10px 5px #888888;
+   transform: scale(1.1);
 }
 #button {
+  color:white;
   display: none;
   opacity: 0.8;
+  margin-left: 50%;
+  margin-right: 50%;
+  
+}
+
+#button:hover {
+  transform: scale(1.2);
+  background: black;
 }
 
 #total {
@@ -50,7 +67,7 @@ img:hover {
   margin-top: 10px;
 }
 #box {
-  background-color: gainsboro;
+  background: linear-gradient( to bottom right, gainsboro, grey,black);
   pading: 100px;
 }
 footer {
@@ -62,7 +79,7 @@ text
 }
 a {
   margin: 35px;
-  color: black;
+  color: darkgrey;
   font-size: 20px;
 }
 a:hover {
