@@ -7,7 +7,7 @@ var Product = function (img, name, idx) {
   this.y=0;
 };
 
-//making imageArray
+// making imageArray --------------------------
 var imageArray= new Array ();
 imageArray.push(new Product("Images/bag.jpg", "bag", 0));
 imageArray.push(new Product("Images/banana.jpg", "banana", 1));
@@ -23,12 +23,15 @@ imageArray.push(new Product("Images/unicorn.jpg", "unicorn", 10));
 imageArray.push(new Product("Images/usb.jpg", "usb", 11));
 imageArray.push(new Product("Images/wine_glass.jpg", "wine glass", 12));
 
+// making empty array  --------
 var availablePhotos = new Array();
 function makeArrayCopy() {
   for(var index=0; index < imageArray.length; index++) {
      availablePhotos.push(imageArray[index])
   }
 }
+
+// If availablePhotos has no photo's left go to makeArrayCopy() ---------
 function randomPhoto() {
   if (availablePhotos.length == 0) {
     makeArrayCopy()
@@ -38,7 +41,7 @@ function randomPhoto() {
      return photoToUse
 }
 
-
+// showing three random images ----------------------
 function displayImage () {
   var imageHolder = document.getElementById('imageHolder');
   imageHolder.innerHTML = " ";
@@ -52,6 +55,7 @@ function displayImage () {
   }
 };
 
+// keeping count of clicks and stringifying imageArray --------
 var totalVotes = 0;
  imageHolder.addEventListener("click", function() {
      imageHolder.innerHTML= " ";
@@ -60,7 +64,7 @@ var totalVotes = 0;
      var container = document.getElementById("chartContainer");
      displayImage();
      clickedImage.y++;
-     localStorage.setItem("data", JSON.stringify(imageArray));
+     localStorage.setItem("data", JSON.stringify(imageArray)); // making localStorage
      totalVotes++;
      console.log(clickedImage);
      console.log(totalVotes);
@@ -75,7 +79,7 @@ var totalVotes = 0;
 
 
 
-
+// things that happen when you click the button -----------
 var button= document.getElementById("button");
 button.addEventListener("click", function() {
   var showButton= document.getElementById("button");
@@ -90,13 +94,13 @@ button.addEventListener("click", function() {
   if (showButton.onclick) {
     paragraph.style.display="block";
     imageHolder.style.display="none";
-
   }
   else {
     paragraph.style.display="none";
     }
 });
 
+// ----------------------------------------- geting item from localStorage
 var storage = localStorage.getItem("data");
 
 if (storage != null) {
